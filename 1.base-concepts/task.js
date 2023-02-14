@@ -1,18 +1,26 @@
-// Задача №1
-"use strict"
-
-function solveEquation(a, b, c) { 
-  let arr = [];
-  let d = Math.pow(b, 2)-(4*a*c);
+//задача №1
+"use stict";
+function solveEquation(a, b, c) {
+   let arr = new Array();
+   let d = (b * b) - (4 * a * c);
+  alert("Дискиминант = " + d);
   if (d < 0) {
-    } else if (d == 0){
-    arr[0] = (-b/(2*a));
+    alert("Квадратное уравнение не имеет корней");
+    alert(arr);
+    return arr;
+  } else if (d == 0) {
+    let x = -(b / 2 * a);
+    alert("Квадратное уравнение имеет один корень: x = " + x);
+    arr[0] = x;
+    return arr;
   } else if (d > 0) {
-    arr[0] = (-b + Math.sqrt(d) )/(2*a);
-    arr[1] = (-b - Math.sqrt(d) )/(2*a); 
+    let x1 = Number((-b + Math.sqrt(d)) / 2 * a);
+    let x2 = Number((-b - Math.sqrt(d)) / 2 * a);
+    alert("Квадратное уравнение имеет два корня: x1 = " + x1 + " x2 = " + x2);
+    arr[0] = x1;
+    arr[1] = x2;
+    return arr;
   }
-  
-  return arr; 
 }
 // Задача №2
 
@@ -23,7 +31,6 @@ let amount = Number(prompt("Введите общую стоимость ипо�
 let countMonths = Number(prompt("Введите срок ипотеки (кол-во месяцев)"));
 calculateTotalMortgage(percent, contribution, amount, countMonths) //вызов функции
 */
-"use strict"
   function calculateTotalMortgage(percent, contribution, amount, countMonths) {  
     if (isNaN(percent) || isNaN (contribution) || isNaN (amount)) {
       return false;
